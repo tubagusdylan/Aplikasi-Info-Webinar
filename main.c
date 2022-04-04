@@ -1,16 +1,35 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include "webinarFunction.h"
 
 void panduanRoleMenu();
 
 int main(){
 
-    int opt;
+    int opt, kuotaWebinar = 50;
+    char judulWebinar[10][50] = {
+        "Globalisasi",
+        "Internet of Things",
+        "Manusia makhluk sempurna",
+        "Indonesia Merdeka",
+        "Cara Investasi ala Warren Buffet"
+    };
+
+    char tanggalPelaksanaan[10][50] = {
+        "30 April 2022",
+        "25 Mei 2022",
+        "2 Mei 2022",
+        "17 Agustus 2022",
+        "26 Juni 2022"
+    };
+
+    char hargaWebinar[2][10] = {
+        "Berbayar",
+        "Gratis"
+    };
 
     do{   
         system("cls"); 
         printf("Selamat Datang di Aplikasi Info Webinar\n\n");
-        printf("===Role Menu===\n1. Admin\n2. Guest\n3. Panduan\n4. Exit\n\n");
+        printf("=== Role Menu ===\n1. Admin\n2. Guest\n3. Panduan\n4. Exit\n\n");
         do{
             printf("Pilih role Anda\n> ");
             scanf("%d", &opt);
@@ -23,10 +42,10 @@ int main(){
         
         switch (opt){
         case 1:
-            // adminFunc();
+            adminMenu(judulWebinar, tanggalPelaksanaan, hargaWebinar, kuotaWebinar);
             break;
         case 2:
-            // guestFunc();
+            guestMenu(judulWebinar, tanggalPelaksanaan, hargaWebinar, kuotaWebinar);
             break;
         case 3: 
             panduanRoleMenu();
@@ -39,7 +58,6 @@ int main(){
             printf("Terima Kasih telah mengunjungi aplikasi kami...\n");
             break;
         }
-
     } while (opt != 4);
     
     return 0;
