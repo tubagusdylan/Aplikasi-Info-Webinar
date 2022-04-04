@@ -29,7 +29,7 @@ int main(){
             // guestFunc();
             break;
         case 3: 
-            panduanAwal();
+            panduanRoleMenu();
             fflush(stdin);
             printf("Tekan Enter untuk kembali...");
             getchar();
