@@ -1,5 +1,6 @@
 # Aplikasi-Info-Webinar
 Sebuah proyek tengah semester mata kuliah Algoritma dan Pemrograman
+
 Dosen:  Dr. Ruki Harwahyu S.T., M.T., M.Sc.
 
 Anggota Kelompok :
@@ -11,7 +12,7 @@ Bahasa : Full bahasa C
 
 Fitur-fitur :
 1. Selamat Datang
-2. Menu role (guess atau admin):
+2. Menu role (guest atau admin):
 	- admin:
 		1. menu login:
 			- menambahkan info webinar:
@@ -22,7 +23,7 @@ Fitur-fitur :
 			- panduan penggunaan
 			- exit
 		2. logout (balikk ke menu role)
-	- Guess:
+	- Guest:
 		1. Info webinar:
 			- urut webinar (nama, tanggal, kuota, 			              berbayar/tidak)
 		2. Daftar Webinar:
