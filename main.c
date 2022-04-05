@@ -1,6 +1,6 @@
 #include "webinarFunction.h"
 
-void panduanRoleMenu();
+void panduanStartMenu();
 
 int main(){
 
@@ -29,9 +29,9 @@ int main(){
     do{   
         system("cls"); 
         printf("Selamat Datang di Aplikasi Info Webinar\n\n");
-        printf("=== Role Menu ===\n1. Admin\n2. Guest\n3. Panduan\n4. Exit\n\n");
+        printf("=== Start Menu ===\n1. Admin\n2. Guest\n3. Panduan\n4. Exit\n\n");
         do{
-            printf("Pilih role Anda\n> ");
+            printf("Pilih Menu di Atas:\n> ");
             scanf("%d", &opt);
 
             if(opt != 1 && opt != 2 && opt != 3 && opt != 4){
@@ -48,7 +48,7 @@ int main(){
             guestMenu(judulWebinar, tanggalPelaksanaan, hargaWebinar, kuotaWebinar);
             break;
         case 3: 
-            panduanRoleMenu();
+            panduanStartMenu();
             fflush(stdin);
             printf("Tekan Enter untuk kembali...");
             getchar();
@@ -63,7 +63,7 @@ int main(){
     return 0;
 }
 
-void panduanRoleMenu(){
+void panduanStartMenu(){
     system("cls");
     printf("Pada Menu Awal ini ada tiga pilihan\n");
     printf("1. User bisa memilih admin, jika user berupa developer dari aplikasi ini\n");
