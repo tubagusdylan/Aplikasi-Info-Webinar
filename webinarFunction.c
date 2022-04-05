@@ -1,6 +1,7 @@
 #include "webinarFunction.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 void panduanInfoWebinar(){
     system("cls");
@@ -69,7 +70,6 @@ void adminMenu(char judulWebinar[][50], char tanggalPelaksanaan[][50], char harg
 
     int opt;
 
-
     do
     {
         system("cls");
@@ -94,6 +94,50 @@ void adminMenu(char judulWebinar[][50], char tanggalPelaksanaan[][50], char harg
     } while (opt != 2);
 }
 
+void searchWebinar(char judulWebinar[][50]){
+    char judul, lanjut;
+    char* hasilJudul;
+    int i, flag = 0;
+
+    system("cls");
+    printf("=== Search Webinar ===\n\n");
+
+    do
+    {      
+        do
+        {
+            printf("Masukkan huruf pertama dari judul webinar: ");
+            fflush(stdin);
+            scanf("%c", &judul);
+
+            if(judul < 'A' || judul > 'Z'){
+                printf("Tolong masukkan huruf kapital!\n");
+                flag = 1;
+            } else {
+                flag = 0;
+            }
+
+        } while (flag);
+            
+        printf("\nJudul Webinar yang tersedia: \n");
+        for (i = 0; i < 10; i++){
+            fflush(stdin);
+            hasilJudul = strchr(judulWebinar[i], judul);
+            printf("%d. %s\n", i+1, hasilJudul);
+        }
+        
+        printf("\nIngin mencari lagi? (y/n): ");
+        scanf("%c", &lanjut);
+        if(lanjut == 'y' || lanjut == 'Y'){
+            flag = 1;
+        } else {
+            flag = 0;
+        }
+        printf("\nTekan Enter untuk kembali...");
+
+    } while (flag);
+}   
+
 void guestMenu(char judulWebinar[][50], char tanggalPelaksanaan[][50], char hargaWebinar[][10], int kuotaWebinar){
 
     int opt;
@@ -114,17 +158,19 @@ void guestMenu(char judulWebinar[][50], char tanggalPelaksanaan[][50], char harg
 
         switch (opt){
         case 1:
-            // infoWebinar();
+            infoWebinar(judulWebinar, tanggalPelaksanaan, hargaWebinar, kuotaWebinar);
             fflush(stdin);
             getchar();
             break;
         case 2:
             // daftarWebinar();
             fflush(stdin);
+            getchar();
             break;
         case 3:
-            // searchWebinar();
+            searchWebinar(judulWebinar);
             fflush(stdin);
+            getchar();
             break;
         case 4:
             panduanGuestMenu();
