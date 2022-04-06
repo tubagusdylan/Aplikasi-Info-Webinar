@@ -82,7 +82,7 @@ int main () {
     };
     
     int kuotaWebinar [10] = {50, 50, 50, 50, 50};
-	// akhir dari inisialisasi variavel utama
+	// akhir dari inisialisasi variabel utama
 
 	// Program Start Menu
     do{   
@@ -94,7 +94,7 @@ int main () {
         	printf ("2. Guest\n");
         	printf ("3. Panduan\n");
         	printf ("4. Kredit\n");
-        	printf ("5. Exit\n\n");
+        	printf ("5. Exit Program\n\n");
             printf("Pilih Menu di Atas:\n> ");
             scanf("%d", &opt);
 
@@ -127,7 +127,28 @@ int main () {
         	break;
         default:
             system("cls");
-            printf("Terima Kasih telah menggunakan aplikasi kami...\n");
+            printf ("\t\t\t\t");
+			for (i = 0; i < 50; i++) {
+					printf ("=");
+					usleep(1000);
+			}
+			printf ("\n");
+			
+			printf ("\t\t\t\t");
+			printf ("=");	
+			usleep(1000);	
+
+			printf (" Terima Kasih telah menggunakan aplikasi kami:D ");
+			
+			printf ("=");	
+			usleep(1000);
+			
+			printf ("\n\t\t\t\t");
+			for (i = 0; i < 50; i++) {
+					printf ("=");
+					usleep(1000);
+			} 
+			printf ("\n\n");
             break;
         }
     } while (opt != 5);
