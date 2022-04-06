@@ -1,10 +1,62 @@
 #include "webinarFunction.h"
 
-void panduanStartMenu();
-
-int main(){
-
-    int opt, kuotaWebinar = 50;
+int main () {
+	// Animasi Pembukaan program
+	system ("COLOR 70");
+	
+	int i, j;
+	printf ("\n\n\n\n\n\n\n\n\n\n\n");
+	for (i = 0; i < 3; i++) {
+		printf ("\t\t\t\t\t");
+		for (j = 0; j < 47; j++) {
+			printf ("=");
+			usleep(1000);
+		}
+		printf ("\n");
+	}
+	
+	printf ("\t\t\t\t\t");
+	for (i = 0; i < 17; i++) {
+		printf ("=");	
+		usleep(1000);	
+	}
+	
+	printf (" Sejuta Ilmu ");
+	
+	for (i = 0; i < 17; i++) {
+		printf ("=");	
+		usleep(1000);	
+	}
+	
+	printf ("\n");
+	for (i = 0; i < 3; i++) {
+		printf ("\t\t\t\t\t");
+		for (j = 0; j < 47; j++) {
+			printf ("=");
+			usleep(1000);
+		}
+		printf ("\n");
+	}
+	
+	char a = 177;
+	char b = 219;
+	
+	printf ("\n\n\n\n\n\n\n\n\n\n\n");
+	printf ("\t\t");
+	
+	for (i = 0; i < 88; i++) {
+		printf ("%c", a);
+		printf ("\r");
+		printf ("\t\t");
+		for (i = 0; i < 88; i++) {
+			printf ("%c", b);
+			usleep(10000);
+		}
+	}
+	// Akhir dari animasi pembukaan program
+	
+	// inisialisasi variabel utama
+	int opt;
     char judulWebinar[10][50] = {
         "Globalisasi",
         "Internet of Things",
@@ -21,24 +73,38 @@ int main(){
         "26 Juni 2022"
     };
 
-    char hargaWebinar[2][10] = {
+    char hargaWebinar[10][10] = {
         "Berbayar",
-        "Gratis"
+        "Gratis",
+        "Berbayar",
+        "Gratis",
+        "Gratis",
     };
+    
+    int kuotaWebinar [10] = {50, 50, 50, 50, 50};
+	// akhir dari inisialisasi variavel utama
 
+	// Program Start Menu
     do{   
-        system("cls"); 
-        printf("Selamat Datang di Aplikasi Info Webinar\n\n");
-        printf("=== Start Menu ===\n1. Admin\n2. Guest\n3. Panduan\n4. Exit\n\n");
         do{
+        	system("cls"); 
+        	printf("Selamat Datang di Aplikasi Info Webinar\n\n");
+        	printf("=== Start Menu ===\n");
+        	printf ("1. Admin\n");
+        	printf ("2. Guest\n");
+        	printf ("3. Panduan\n");
+        	printf ("4. Kredit\n");
+        	printf ("5. Exit\n\n");
             printf("Pilih Menu di Atas:\n> ");
             scanf("%d", &opt);
 
-            if(opt != 1 && opt != 2 && opt != 3 && opt != 4){
-                printf("Mohon masukkan pilihan yang benar!\n\n");
+            if(opt != 1 && opt != 2 && opt != 3 && opt != 4 && opt!= 5){
+                printf ("\n*** Harap masukkan pilihan yang sesuai ***\n");
+				sleep(2);
+				system ("cls");
             }
 
-        } while (opt != 1 && opt != 2 && opt != 3 && opt != 4);
+        } while (opt != 1 && opt != 2 && opt != 3 && opt != 4 && opt != 5);
         
         switch (opt){
         case 1:
@@ -53,20 +119,19 @@ int main(){
             printf("Tekan Enter untuk kembali...");
             getchar();
             break;
+        case 4 : 
+        	anggotaKelompok();
+        	fflush(stdin);
+            printf("\n\nTekan Enter untuk kembali...");
+            getchar();
+        	break;
         default:
             system("cls");
-            printf("Terima Kasih telah mengunjungi aplikasi kami...\n");
+            printf("Terima Kasih telah menggunakan aplikasi kami...\n");
             break;
         }
-    } while (opt != 4);
+    } while (opt != 5);
+	// Akhir dari program Start Menu
     
     return 0;
-}
-
-void panduanStartMenu(){
-    system("cls");
-    printf("Pada Menu Awal ini ada tiga pilihan\n");
-    printf("1. User bisa memilih admin, jika user berupa developer dari aplikasi ini\n");
-    printf("2. User bisa memilih guest, jika user adalah seorang tamu yang ingin mencari info webinar\n");
-    printf("3. User bisa memilih exit, jika ingin keluar dari aplikasi\n\n");
 }
